@@ -11,6 +11,9 @@ public class Activity1 {
 	}
 
 	public static int multiply(int... values) {
+		if (values.length == 0) {
+			throw new IllegalArgumentException("introduce algun valor");
+		}
 		int resultado = 1;
 		for (int i = 0; i < values.length; i++) {
 			resultado = resultado * values[i];
