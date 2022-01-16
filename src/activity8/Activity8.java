@@ -15,13 +15,17 @@ public class Activity8 {
 		int valuesLenght = values.length;
 		boolean simetrico = true;
 		for (int i = 0; i < valuesLenght; i++) {
-			for (int j = 0; j < valuesLenght; j++) {
-				if (values[i][j] != values[j][i] || values[i].length != valuesLenght) {
-					//ese or que le añado comprueba que la array es cuadrada, en el caso de que alguna de las arrays
-					//tenga mas tamaño que el numero de filas, dará false ya que no es simétrica
-					simetrico = false;
+			if (values[i].length == 0) { //de nuevo este if es para evitar un out of bounds
+			} else {
+				for (int j = 0; j < valuesLenght; j++) {
+					if (values[i][j] != values[j][i] || values[i].length != valuesLenght) {
+						//ese or que le añado comprueba que la array es cuadrada, en el caso de que alguna de las arrays
+						//tenga mas tamaño que el numero de filas, dará false ya que no es simétrica
+						simetrico = false;
+					}
 				}
 			}
+
 		}
 		return simetrico;
 	}

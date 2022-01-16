@@ -15,16 +15,21 @@ public class Activity3 {
 
 	public static int[] reverseArray(int[] values, int decreciente, int ascendiente) {
 		int[] reserva = { 0 };
-		if (decreciente == -1) {
-			decreciente = values.length - 1;
-		}
+		if (values.length == 0) {
+			System.out.println("no se puede introducir una array vacia");
+			//si por un casual metieramos una array vacia y no pusieramos este if nos daria un StackOverflow
+		} else {
+			if (decreciente == -1) {
+				decreciente = values.length - 1;
+			}
 
-		if (decreciente != 0) {
-			values = reverseArray(values, decreciente - 1, ascendiente + 1);
+			if (decreciente != 0) {
+				values = reverseArray(values, decreciente - 1, ascendiente + 1);
+			}
+			reserva[0] = values[decreciente];
+			values[decreciente] = values[ascendiente];
+			values[ascendiente] = reserva[0];
 		}
-		reserva[0] = values[decreciente];
-		values[decreciente] = values[ascendiente];
-		values[ascendiente] = reserva[0];
 		return values;
 	}
 	//soy un genio, en verdad no pero ha costado lo suyo
