@@ -26,6 +26,9 @@ public class Activity6 {
 					if (values[i][j][k] > result) {
 						result = values[i][j][k];
 					}
+					if (result == 0 && values[i][j][k] < 0) {
+						result = values[i][j][k]; //esto hara que funcione con negativos
+					}
 				}
 			}
 		}

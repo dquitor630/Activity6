@@ -22,6 +22,7 @@ public class Activity8 {
 						//ese or que le añado comprueba que la array es cuadrada, en el caso de que alguna de las arrays
 						//tenga mas tamaño que el numero de filas, dará false ya que no es simétrica
 						simetrico = false;
+						return simetrico; //dos return pero con esto evito un out of bouds y ademas hacer varios for
 					}
 				}
 			}
